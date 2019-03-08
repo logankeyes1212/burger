@@ -1,4 +1,8 @@
-li {
+html {
+  background-color: aqua;
+}
+
+ul {
     padding: 5px;
     margin: 5px;
     background: #faebd7;

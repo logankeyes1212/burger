@@ -4,10 +4,19 @@
 <h2>Choose a burger to devour or add a burger to devour later!</h2>
 
 <ul>
+
     {{#each burgers}}
-    {{!-- {{#unless devoured}}
-    {{> devoured=true}}
-    {{/unless}} --}}
+
+    {{#unless this.devoured}}
+    <li>
+        {{this.burger_name}}
+        
+        <div class="form-group">
+            <input type="submit" class = "devoured" name="devoured" id="change-devoured" data-id="{{this.id}}" data-name="{{this.burger_name}}" value="devour"> Eat Me!
+        </div>
+    </li>
+    {{/unless}}
+
     {{/each}}
 </ul>
 
@@ -15,9 +24,9 @@
 
 <ul>
     {{#each burgers}}
-    {{!-- {{#if devoured}}
-    {{> devoured=false}}
-    {{/if}} --}}
+    {{#if this.devoured}}
+    {{this.burger_name}}
+    {{/if}}
     {{/each}}
 </ul>
 
@@ -29,9 +38,9 @@
         <input type="text" id="bur" name="name">
     </div>
 
-    <div class="form-group">
-        <input type="radio" name="devoured" value="1"> Eat Me!
-    </div>
+    {{!-- <div class="form-group">
+        <input type="submit" name="devoured" id="change-devoured" value="devour"> Eat Me!
+    </div> --}}
 
     <button type="submit">Add Burger</button>
 </form>

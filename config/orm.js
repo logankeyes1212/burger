@@ -54,7 +54,7 @@ var orm = {
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
-    console.log(queryString);
+    
 
     connection.query(queryString, vals, function(err, result) {
       if (err) {
@@ -65,15 +65,19 @@ var orm = {
     });
   },
 
-  updateOne: function(table, objColVals, condition, cb) {
+  updateOne: function(table, objColVals, cb) {
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
-    queryString += objToSql(objColVals);
+    queryString += "devoured = true";
     queryString += " WHERE ";
-    queryString += condition;
-
-    // console.log(queryString);
+    queryString += "id = " + objColVals;
+    // UPDATE burgers SET devoured = true WHERE id = 2;
+    
+    
+    
+    
+    console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
