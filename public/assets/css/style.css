@@ -1,11 +1,27 @@
-html {
-  background-color: aqua;
+body { 
+  background: url("../img/burger.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+}
+.container{
+  /* position: absolute; */
+  
+  
+   color: white;
+  text-align: center;
+  /* padding-left    :100px; */
+  overflow: hidden; 
+  /* background-size: cover; */
+
 }
 
 ul {
     padding: 5px;
     margin: 5px;
-    background: #faebd7;
+    /* background: #faebd7; */
   }
   
   .label {
@@ -15,10 +31,14 @@ ul {
   .create-update-form {
     padding: 5px;
     margin: 5px;
-    background: aqua;
+    /* background: aqua; */
   }
   
   .form-group {
     margin-bottom: 5px;
   }
-      
+.burgerLogo{
+  text-align: center;
+  
+}
+ 
